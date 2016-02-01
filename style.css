@@ -1,0 +1,195 @@
+* { box-sizing: border-box; padding:0; margin: 0; }
+@font-face {
+    font-family: Vibrocen;
+    src: url(css/fonts/vibrocen.tff);
+    color:#FFFFFF;
+}
+body {
+  font-family: Vibrocen;
+  color:white;
+  font-size:12px;
+  background-image: url("xtreme.jpg");
+  background-size:100% auto;
+  padding-right: 5%;
+}
+
+form {
+	font-family: Vibrocen;
+ 	background:#111;
+  width: 60%;
+  margin:30px auto;
+  border-radius:0.4em;
+  border:1px solid #191919;
+  overflow:hidden;
+  position:relative;
+  box-shadow: 0 5px 10px 5px rgba(0,0,0,0.2);
+}
+
+form:after {
+font-family: Vibrocen;
+  content:"";
+  display:block;
+  position:absolute;
+  height:1px;
+  width:100px;
+  left:20%;
+  background:linear-gradient(left, #111, #444, #b6b6b8, #444, #111);
+  top:0;
+  color:#FFFFFF;
+}
+
+form:before {
+font-family: Vibrocen;
+ 	content:"";
+  display:block;
+  position:absolute;
+  width:8px;
+  height:5px;
+  border-radius:50%;
+  left:34%;
+  top:-7px;
+  box-shadow: 0 0 6px 4px #fff;
+}
+
+.inset {
+font-family: Vibrocen;
+ 	padding:20px;
+  border-top:1px solid #19191a;
+  color:#FFFFFF;
+}
+
+form h1 {
+	font-family: Vibrocen;
+  font-size:14px;
+  text-shadow:0 1px 0 black;
+  text-align:center;
+  padding:15px 0;
+  border-bottom:1px solid rgba(0,0,0,1);
+  position:relative;
+}
+
+form h1:after {
+	font-family: Vibrocen;
+ 	content:"";
+  display:block;
+  width:250px;
+  height:100px;
+  position:absolute;
+  top:0;
+  left:50px;
+  pointer-events:none;
+  transform:rotate(70deg);
+  -webkit-transform: rotate(70deg);
+  background:linear-gradient(50deg, rgba(255,255,255,0.15), rgba(0,0,0,0));
+   background-image: -webkit-linear-gradient(50deg, rgba(255,255,255,0.05), rgba(0,0,0,0)); /* For Safari */
+}
+
+label {
+ 	color:#FFF;
+  display:block;
+  padding-bottom:9px;
+}
+
+input[type=text],
+input[type=tel],
+input[type=number],
+input[type=email],
+textarea,
+select,
+select option,
+input[type=password] {
+	font-family: Vibrocen;
+    color: #fff;
+ 	width:100%;
+  padding:8px 5px;
+  background:linear-gradient(#1f2124, #27292c);
+  border:1px solid #222;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.1);
+  border-radius:0.3em;
+  margin-bottom:20px;
+}
+
+label[for=remember]{
+ 	color:white;
+  display:inline-block;
+  padding-bottom:0;
+  padding-top:5px;
+}
+
+
+
+.p-container {
+ 	padding:0 20px 20px 20px;
+}
+
+.p-container:after {
+ 	clear:both;
+  display:table;
+  content:"";
+}
+
+.p-container span {
+  display:block;
+  float:left;
+  color:#0d93ff;
+  padding-top:8px;
+}
+
+input[type=submit], input[type=reset] {
+ 	padding:5px 20px;
+  margin: 0 5px;
+  border:1px solid rgba(0,0,0,0.4);
+  text-shadow:0 -1px 0 rgba(0,0,0,0.4);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.3),
+    inset 0 10px 10px rgba(255,255,255,0.1);
+  border-radius:0.3em;
+  background:#c22626;
+  color:white;
+  float:right;
+  font-weight:bold;
+  cursor:pointer;
+  font-size:13px;
+}
+
+input[type=submit]:hover, input[type=reset]:hover {
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.3),
+    inset 0 -10px 10px rgba(255,255,255,0.1);
+    color:white;
+}
+
+input[type=text]:hover,
+input[type=number]:hover,
+input[type=password]:hover,
+textarea:hover,
+select:hover,
+select option,
+label:hover ~ input[type=text],
+label:hover ~ input[type=password] {
+font-family: Vibrocen;
+ 	background:#27292c;
+}
+
+.terms {
+  margin: 0 20px;
+}
+.terms a {
+  padding:5px 5px;
+  border:1px solid rgba(0,0,0,0.4);
+  text-shadow:0 -1px 0 rgba(0,0,0,0.4);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.3),
+    inset 0 10px 10px rgba(255,255,255,0.1);
+  border-radius:0.3em;
+  background:#c22626;
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
+  font-size:12px;
+  text-decoration: none;
+}
+
+p { margin: 5px 0; }
+hr { margin-top: 0; }
