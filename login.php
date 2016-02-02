@@ -5,11 +5,11 @@
 Admin Panel
 </title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link media="all" type="text/css" rel="stylesheet" href="css/bootstrap.css">
 <link media="all" type="text/css" rel="stylesheet" href="css/bootstrap-theme.css">
 <link media="all" type="text/css" rel="stylesheet" href="css/signin.css">
-<link href="justified-nav.css" rel="stylesheet">     
+<link href="justified-nav.css" rel="stylesheet">
 <style>body{padding-top:60px;}</style>
 </head>
 <body>
@@ -24,7 +24,7 @@ Admin Panel
 <span class="icon-bar"></span>
 </button>
 <a class="navbar-brand" href="#">Admin Panel</a>
-</div> 
+</div>
 <div class="collapse navbar-collapse">
 <ul class="nav navbar-nav navbar-right">
 </ul>
@@ -45,9 +45,29 @@ Admin Panel
 <input type="checkbox" value="remember-me"> Remember me
 </label>
 </div>
-<button class="btn btn-lg btn-primary btn-block" name="submit" type="submit">Sign in</button><br/>
+<!-- <button class="btn btn-lg btn-primary btn-block" name="submit" type="submit">Sign in</button><br/> -->
+<input type="submit" class="btn btn-lg btn-primary btn-block" name="submit" value="Sign in">
 </form>
-</div>
 
-                            
-                                                        
+<?php
+  @session_start();
+
+  if(isset($_POST['submit'])) {
+    login();
+  }
+
+  function login() {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    if ($username == "admin@abc.com" && $password == "456123") {
+      $_SESSION['userid'] = $username;
+
+      header("location:adminpanel.php");
+    } else {
+      echo "<script>alert('wrong username or password'); </script>";
+    }
+  }
+ ?>
+
+</div>

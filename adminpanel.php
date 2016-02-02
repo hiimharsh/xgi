@@ -1,3 +1,70 @@
+<?php
+
+  define('DB_HOST', 'localhost');
+  define('DB_NAME', 'cgegloba_clanwarsregistration');
+  define('DB_USER','root');
+  define('DB_PASSWORD','');
+
+  session_start();
+  if (!isset($_SESSION['userid'])) {
+    ?>
+
+    <script>
+      window.location = "login.php";
+    </script>
+
+    <?php
+  }
+
+  $con = mysql_connect(DB_HOST, DB_USER, DB_PASSWORD) or die("Failed to connect to MySQL: " . mysql_error());
+  $db = mysql_select_db(DB_NAME, $con) or die("Failed to connect to MySQL: " . mysql_error());
+
+  if (isset($_GET['download'])) {
+    download();
+  }
+  // Original PHP code by Chirp Internet: www.chirp.com.au
+  // Please acknowledge use of this code by including this header.
+  function download() {
+    function cleanData(&$str)
+    {
+      if($str == 't') $str = 'TRUE';
+      if($str == 'f') $str = 'FALSE';
+      if(preg_match("/^0/", $str) || preg_match("/^\+?\d{8,}$/", $str) || preg_match("/^\d{4}.\d{1,2}.\d{1,2}/", $str)) {
+        $str = "'$str";
+      }
+      if(strstr($str, '"')) $str = '"' . str_replace('"', '""', $str) . '"';
+    }
+
+    // filename for download
+    $filename = "website_data_" . date('Ymd') . ".csv";
+
+    header("Content-Disposition: attachment; filename=\"$filename\"");
+    header("Content-Type: text/csv");
+
+    $out = fopen("php://output", 'w');
+
+    $flag = false;
+    $result = mysql_query(
+    "SELECT team.team_id, team.team_name, team.team_city, team.team_qualifier,
+      player.player_name, player.player_mobile, player.player_email
+      FROM team
+      INNER JOIN player
+      ON team.team_id = player.player_team"
+    ) or die('Query failed!');
+    while(false !== ($row = mysql_fetch_assoc($result))) {
+      if(!$flag) {
+        // display field/column names as first row
+        fputcsv($out, array_keys($row), ',', '"');
+        $flag = true;
+      }
+      array_walk($row, 'cleanData');
+      fputcsv($out, array_values($row), ',', '"');
+    }
+    fclose($out);
+    exit;
+  }
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -12,22 +79,15 @@
     </style>
   </head>
   <body>
-
-    <?php
-      define('DB_HOST', 'localhost');
-      define('DB_NAME', 'cgegloba_clanwarsregistration');
-      define('DB_USER','root');
-      define('DB_PASSWORD','');
-
-      $con = mysql_connect(DB_HOST, DB_USER, DB_PASSWORD) or die("Failed to connect to MySQL: " . mysql_error());
-      $db = mysql_select_db(DB_NAME, $con) or die("Failed to connect to MySQL: " . mysql_error());
-
-    ?>
-
     <div class="container">
       <div class="row">
+        <div class="logout-button" style="margin-top: 20px;">
+          <a href="adminpanel.php?download=true">Export as CSV (Excel)</a>
+          <a href="logout.php" style="float:right">Logout</a>
+        </div>
         <table class="table">
           <tr>
+            <th>Team Id</th>
             <th>Team Name</th>
             <th>Team City</th>
             <th>Team Qualifier</th>
@@ -39,7 +99,7 @@
 
           $query =  mysql_query("SELECT * FROM team");
           $queryt =  mysql_query(
-          "SELECT team.team_name, team.team_city, team.team_qualifier,
+          "SELECT team.team_id, team.team_name, team.team_city, team.team_qualifier,
             player.player_name, player.player_mobile, player.player_email
             FROM team
             INNER JOIN player
@@ -50,6 +110,7 @@
 
            ?>
           <tr>
+            <td><?php echo "".$rows['team_id']; ?></td>
             <td><?php echo "".$rows['team_name']; ?></td>
             <td><?php echo "".$rows['team_city']; ?></td>
             <td><?php echo "".$rows['team_qualifier']; ?></td>
