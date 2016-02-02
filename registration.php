@@ -67,13 +67,13 @@
       $teamid = ++$teamid;
       //echo "TEAM ID ++ " . $teamid;?>
 
-      <table class="table table-bordered">
+      <!-- <table class="table table-bordered">
         <tr>
           <td style="text-align: left;"><?php echo $rows['team_name']; ?></td>
           <td style="text-align: left;"><?php echo $rows['team_city']; ?></td>
           <td style="text-align: left;"><?php echo $rows['team_qualifier']; ?></td>
         </tr>
-      </table>
+      </table> -->
 
 
       <?php

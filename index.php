@@ -5,14 +5,14 @@
     <title>
         Zionram | Gamer registration
     </title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="shortcut icon" href="../uploads/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link type="text/css" rel="stylesheet" href="fb-traffic-pop.css">
     <script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
-<script type="text/javascript" src="fb-traffic-pop.min.js"></script>
-<script type="text/javascript">
+    <script type="text/javascript" src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
+    <script type="text/javascript" src="fb-traffic-pop.min.js"></script>
+    <script type="text/javascript">
 
 	// $(document).ready(function(){
 	//
@@ -104,7 +104,7 @@ div {
         <p>
           <label for="qualifier">Qualifier:</label>
           <select class="text-uppercase" name="qualifier">
-            <option value="select">Please Select</option>
+            <option>Please Select</option>
             <option value="Mumbai">Mumbai</option>
             <option value="Kolkata">Kolkata</option>
             <option value="Delhi">Delhi</option>
