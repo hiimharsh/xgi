@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <title>
-        XGI | Gamer registration
+        Clan Wars | Gamer | Registration
     </title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="shortcut icon" href="../uploads/favicon.ico" type="image/x-icon" />
@@ -146,7 +146,7 @@ div {
     <label for="hearabout">WHERE DID YOU HEAR ABOUT US? </label>
     <input type="text" name="hearabout" id="hearabout" required>
   </p> -->
-  <div class="row">
+  <div class="row hidden-sm hidden-xs">
     <div class="col-md-4">
       <p>Player #1 (Captain)</p>
       <hr>
@@ -226,18 +226,113 @@ div {
       <hr>
       <p>
         <label for="teamsixname">Name: </label>
-        <input type="text" name="teamsixname" id="teamsixname" required>
+        <input type="text" name="teamsixname" id="teamsixname">
       </p>
       <p>
         <label for="teamsixmobile">Mobile No: </label>
-        <input type="text" name="teamsixmobile" id="teamsixmobile" required>
+        <input type="text" name="teamsixmobile" id="teamsixmobile">
       </p>
       <p>
         <label for="teamsixemail">Email: </label>
-        <input type="text" name="teamsixemail" id="teamsixemail" required>
+        <input type="text" name="teamsixemail" id="teamsixemail">
       </p>
     </div>
   </div>
+
+  <div class="row hidden-lg hidden-md">
+    <div class="col-md-4">
+      <p>Player #1 (Captain)</p>
+      <hr>
+      <p>
+        <label for="teamonename">Name: </label>
+        <input type="text" name="teamonename" id="teamonename" required>
+      </p>
+      <p>
+        <label for="teamonemobile">Mobile No: </label>
+        <input type="text" name="teamonemobile" id="teamonemobile" required>
+      </p>
+      <p>
+        <label for="teamoneemail">Email: </label>
+        <input type="text" name="teamoneemail" id="teamoneemail" required>
+      </p>
+      <p>Player #2</p>
+      <hr>
+      <p>
+        <label for="teamtwoname">Name: </label>
+        <input type="text" name="teamtwoname" id="teamtwoname" required>
+      </p>
+      <p>
+        <label for="teamtwomobile">Mobile No: </label>
+        <input type="text" name="teamtwomobile" id="teamtwomobile" required>
+      </p>
+      <p>
+        <label for="teamtwoemail">Email: </label>
+        <input type="text" name="teamtwoemail" id="teamtwoemail" required>
+      </p>
+    </div>
+    <div class="col-md-4">
+      <p>Player #3</p>
+      <hr>
+      <p>
+        <label for="teamthreename">Name: </label>
+        <input type="text" name="teamthreename" id="teamthreename" required>
+      </p>
+      <p>
+        <label for="teamthreemobile">Mobile No: </label>
+        <input type="text" name="teamthreemobile" id="teamthreemobile" required>
+      </p>
+      <p>
+        <label for="teamthreeemail">Email: </label>
+        <input type="text" name="teamthreeemail" id="teamthreeemail" required>
+      </p>
+      <p>Player #4</p>
+      <hr>
+      <p>
+        <label for="teamfourname">Name: </label>
+        <input type="text" name="teamfourname" id="teamfourname" required>
+      </p>
+      <p>
+        <label for="teamfourmobile">Mobile No: </label>
+        <input type="text" name="teamfourmobile" id="teamfourmobile" required>
+      </p>
+      <p>
+        <label for="teamfouremail">Email: </label>
+        <input type="text" name="teamfouremail" id="teamfouremail" required>
+      </p>
+
+    </div>
+    <div class="col-md-4">
+      <p>Player #5</p>
+      <hr>
+      <p>
+        <label for="teamfivename">Name: </label>
+        <input type="text" name="teamfivename" id="teamfivename" required>
+      </p>
+      <p>
+        <label for="teamfivemobile">Mobile No: </label>
+        <input type="text" name="teamfivemobile" id="teamfivemobile" required>
+      </p>
+      <p>
+        <label for="teamfiveemail">Email: </label>
+        <input type="text" name="teamfiveemail" id="teamfiveemail" required>
+      </p>
+      <p>Player #6</p>
+      <hr>
+      <p>
+        <label for="teamsixname">Name: </label>
+        <input type="text" name="teamsixname" id="teamsixname">
+      </p>
+      <p>
+        <label for="teamsixmobile">Mobile No: </label>
+        <input type="text" name="teamsixmobile" id="teamsixmobile">
+      </p>
+      <p>
+        <label for="teamsixemail">Email: </label>
+        <input type="text" name="teamsixemail" id="teamsixemail">
+      </p>
+    </div>
+  </div>
+
   <div class="row">
     <div class="terms">
       <p>All fields are mandatory to fill.</p>
@@ -347,8 +442,6 @@ div {
       // if($insertPlayerFour) { echo "PLAYER FOUR ADDED"; }
       // if($insertPlayerFive) { echo "PLAYER FIVE ADDED"; }
       // if($insertPlayerSix) { echo "PLAYER SIX ADDED"; }
-
-      echo "<script>alert("Team is successfully registered");</script>";
 
     } else {
       echo "TEAM ALREADY EXSISTS";
